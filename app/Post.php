@@ -15,7 +15,7 @@ class Post extends Model
      *
      * @return array
      */
-    public function sluggable(): array
+    public function sluggable():array
     {
         return [
             'slug' => [
@@ -23,5 +23,10 @@ class Post extends Model
                 'onUpdate' => true
             ]
         ];
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
